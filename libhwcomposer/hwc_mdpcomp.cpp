@@ -190,8 +190,8 @@ int MDPComp::prepare(hwc_context_t *ctx, hwc_layer_1_t *layer,
 
         if(isYuvBuffer(hnd))
             setVidInfo(layer, mdpFlags);
-
-        ovutils::setMdpFlags(mdpFlags,ovutils::OV_MDP_BACKEND_COMPOSITION);
+        else
+            ovutils::setMdpFlags(mdpFlags,ovutils::OV_MDP_BACKEND_COMPOSITION);
 
         if(layer->blending == HWC_BLENDING_PREMULT) {
             ovutils::setMdpFlags(mdpFlags,
